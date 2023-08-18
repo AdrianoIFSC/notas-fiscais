@@ -19,9 +19,9 @@ while True:
     if eventos == 'Começar':
         navegador = webdriver.Firefox()
         file = valores['arquivo']
-        navegador.get('*') # NO LUGAR DO # INSIRA A URL DO SITE QUE IRA RESUMIR A NOTA FISCAL
+        navegador.get('*') # NO LUGAR DO * INSIRA A URL DO SITE QUE IRA RESUMIR A NOTA FISCAL
         arquivo_input = navegador.find_element(By.XPATH, '*') # NO LUGAR DO * COLOQUE O XPATH DO CAMPO DE INPUT
-        arquivo_input.send_keys(r'*\\' + file) #NO LUGAR DO * COLOQUE O LOCAL DA PASTA ONDE ESTA LOCALIZADO AS NOTAS FISCAIS
+        arquivo_input.send_keys(r'*\\' + file) # NO LUGAR DO * COLOQUE O LOCAL DA PASTA ONDE ESTA LOCALIZADO AS NOTAS FISCAIS
         navegador.find_element(By.XPATH, '*').click() # NO LUGAR DO * COLOQUE O XPATH DO BOTÃO DE EXTRAIR TEXTO
         navegador.execute_script("window.open('about:blank', '_blank');")
         navegador.switch_to.window(navegador.window_handles[1])
